@@ -1,0 +1,13 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"deepscan.enable": true,
+	"files.exclude": {
+		".next": true,
+		"node_modules": true,
+		".vscode": true
+	}
+}
