@@ -1,22 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 import SimpleComponent from './components/SimpleComponent';
+import tw from './core/tailwind';
 
 export default function App() {
 	return (
-		<View style={styles.container}>
-			<Text>Open up App.tsx to start working on your app!</Text>
-			<StatusBar style="auto" />
-			<SimpleComponent />
-		</View>
+		<SafeAreaView>
+			<View style={tw`flex bg-blue-200 h-full items-center justify-center`}>
+				<Text style={tw`mb-4 text-green font-bold text-lg`}>YOOOOO UPSELL POS!</Text>
+				<StatusBar style="auto" />
+				<SimpleComponent />
+			</View>
+		</SafeAreaView>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});

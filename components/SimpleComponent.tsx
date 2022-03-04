@@ -1,14 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-// import { useTailwind } from 'tailwind-rn';
+import tw from '../core/tailwind';
 
 const SimpleComponent = () => {
-	// const tailwind = useTailwind();
 	return (
-		<View>
-			<View>
-				<Text>Hello Tailwind</Text>
-			</View>
+		<View style={tw`px-5 py-3 bg-green rounded-md`}>
+			<Text style={tw`text-white`}>Hello Tailwind</Text>
 		</View>
 	);
 };
