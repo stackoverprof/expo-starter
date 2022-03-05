@@ -11,12 +11,18 @@ const RootNavigator = () => {
 
 	return (
 		<Stack.Navigator>
-			{!authenticated && <Stack.Screen name="AuthArea" component={AuthScreen} options={{}} />}
+			{!authenticated && (
+				<Stack.Screen
+					name="AuthArea"
+					component={AuthScreen}
+					options={{ title: 'Auth Area' }}
+				/>
+			)}
 			{authenticated && (
 				<Stack.Screen
 					name="AppArea"
 					component={AppScreen}
-					options={{ headerShown: false }}
+					options={{ headerShown: false, title: 'App Area' }}
 				/>
 			)}
 
