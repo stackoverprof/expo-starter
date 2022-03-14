@@ -1,6 +1,15 @@
 {
 	"extends": "expo/tsconfig.base",
 	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@assets/*": ["assets/*"],
+			"@components/*": ["components/*"],
+			"@core/*": ["core/*"],
+			"@screens/*": ["screens/*"]
+		},
 		"strict": true
-	}
+	},
+	"include": ["**/*.ts", "**/*.tsx"],
+	"exclude": ["**/*.js", "**/*.jsx"]
 }

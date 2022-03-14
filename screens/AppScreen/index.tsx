@@ -1,19 +1,17 @@
+import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as React from 'react';
-import { Pressable, Platform } from 'react-native';
+import { Pressable } from 'react-native';
 import TabOneScreen from './TabOneScreen';
 import TabTwoScreen from './TabTwoScreen';
+import tw from '@core/tailwind';
+import { Colors } from '@core/tailwind/theme';
 
 const BottomTab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
 	const screenOptions = {
-		tabBarStyle: {
-			height: Platform.OS === 'ios' ? 82 : 66,
-			paddingTop: 4,
-			paddingBottom: Platform.OS === 'ios' ? 30 : 12,
-		},
+		tabBarActiveTintColor: Colors.green,
 	};
 
 	return (
@@ -23,7 +21,7 @@ const BottomTabNavigator = () => {
 				component={TabOneScreen}
 				options={({ navigation }) => ({
 					title: 'Tab One',
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+					tabBarIcon: ({ color }) => <FontAwesome size={30} name="home" color={color} />,
 					headerRight: () => <ModalButton navigation={navigation} />,
 				})}
 			/>
@@ -32,23 +30,14 @@ const BottomTabNavigator = () => {
 				component={TabTwoScreen}
 				options={{
 					title: 'Tab Two',
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+					tabBarIcon: ({ color }) => <FontAwesome size={24} name="group" color={color} />,
 				}}
 			/>
 		</BottomTab.Navigator>
 	);
 };
-export default BottomTabNavigator;
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-	name: React.ComponentProps<typeof FontAwesome>['name'];
-	color: string;
-}) {
-	return <FontAwesome size={30} {...props} />;
-}
+export default BottomTabNavigator;
 
 const ModalButton = ({ navigation }: any) => (
 	<Pressable
@@ -57,6 +46,6 @@ const ModalButton = ({ navigation }: any) => (
 			opacity: pressed ? 0.5 : 1,
 		})}
 	>
-		<FontAwesome name="info-circle" size={25} style={{ marginRight: 15 }} />
+		<FontAwesome name="info-circle" size={25} style={tw`mr-4`} />
 	</Pressable>
 );
