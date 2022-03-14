@@ -1,0 +1,6 @@
+/dist/
+.expo
+.expo-shared
+.vscode
+.git
+node_modules

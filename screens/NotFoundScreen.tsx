@@ -1,10 +1,9 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-
 import { Text, View } from 'react-native';
-import { RootStackScreenProps } from '../types';
+import { Colors } from '@core/tailwind/theme';
 
-export default function NotFoundScreen({ navigation }: RootStackScreenProps<'NotFound'>) {
+export default function NotFoundScreen({ navigation }: any) {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>This screen doesn&apos;t exist.</Text>
@@ -32,6 +31,6 @@ const styles = StyleSheet.create({
 	},
 	linkText: {
 		fontSize: 14,
-		color: '#2e78b7',
+		color: Colors.green,
 	},
 });
